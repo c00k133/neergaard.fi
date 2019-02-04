@@ -1,2 +1,11 @@
 node_modules
 npm-debug.log
+package-lock.json
+
+# Git specific
+.git
+.gitignore
+
+# Env specific
+.direnv
+.envrc

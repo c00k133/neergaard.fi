@@ -1,28 +1,33 @@
-CONTAINER=homepage-app
+CONTAINER = homepage-app
+USERNAME = cookie
+RUNFLAGS = -p 49160:8080 -d
 
-up:
-	docker-compose up -d
+#up:
+#	docker-compose up -d
 
 build:
-	docker-compose rm -vsf
-	docker-compose down -v --remove-orphans
-	docker-compose build
-	docker-compose up -d
+	docker build -t $(USERNAME)/$(CONTAINER) .
+#	docker-compose rm -vsf
+#	docker-compose down -v --remove-orphans
+#	docker-compose build
+#	docker-compose up -d
 
-down:
-	docker-compose down
-
-require:
-	docker-compose run $(CONTAINER) composer require
-
-require-dev:
-	docker-compose run $(CONTAINER) composer require --dev
+#down:
+#	docker-compose down
+#
+#require:
+#	docker-compose run $(CONTAINER) composer require
+#
+#require-dev:
+#	docker-compose run $(CONTAINER) composer require --dev
 
 run:
-	docker-compose run $(CONTAINER) node index.js
+	docker run $(RUNFLAGS) $(USERNAME)/$(CONTAINER)
+#	docker-compose run $(CONTAINER) node index.js
 
 jumpin:
-	docker-compose run $(CONTAINER) bash
+	docker exec -it $(CONTAINER) /bin/bash
+#	docker-compose run $(CONTAINER) bash
 
-tail-logs:
-	docker-compose logs -f $(CONTAINER)
+#tail-logs:
+#	docker-compose logs -f $(CONTAINER)
