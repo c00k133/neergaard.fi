@@ -2,6 +2,8 @@ CONTAINER = homepage-app
 USERNAME = cookie
 RUNFLAGS = -p 49160:8080 -d
 
+#TESTING ?= 
+
 #up:
 #	docker-compose up -d
 
@@ -31,3 +33,6 @@ jumpin:
 
 #tail-logs:
 #	docker-compose logs -f $(CONTAINER)
+
+#testing:
+#	echo

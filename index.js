@@ -1,7 +1,7 @@
 'use strict';
 
 const express = require('express');
-const sassMiddleware = require('node-sass-middleware');
+const sass_middleware = require('node-sass-middleware');
 const path = require('path');
 
 // Constants
@@ -12,20 +12,23 @@ const HOST = '0.0.0.0';
 const app = express();
 
 app.use(
-    sassMiddleware({
-        src: __dirname,  // TODO: check if `sass` directory needs to be added
-        dest: path.join(__dirname, 'public'),
+    sass_middleware({
+        src: __dirname,
+        dest: __dirname,
         debug: true
     })
 );
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
-app.set('views', __dirname + '/views');
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+app.use(express.static(path.join(__dirname, 'public')));
+
+
 app.get('/', (req, res) => {
-    res.render('index.pug', {title: 'Axel Neergaard', message: 'Welcome'})
+    res.render('index.pug', {title: 'Axel Neergaard'})
 });
 
 app.listen(PORT, HOST);
