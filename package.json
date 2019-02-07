@@ -2,9 +2,9 @@
   "name": "homepage",
   "version": "1.0.0",
   "description": "Personal Homepage",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node app.js",
     "test": "test"
   },
   "author": "Axel Neergaard axel.neergaard@gmail.com",

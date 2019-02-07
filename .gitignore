@@ -1,3 +1,7 @@
+# WebStorm folder
+.idea/
+.idea/**
+
 # Logs
 logs
 *.log
