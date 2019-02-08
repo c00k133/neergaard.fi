@@ -1,12 +1,16 @@
-nav(class="navbar has-shadow is-spaced is-dark")
-    div(class="container")
-        div(class="navbar-brand")
-            h5(id="main-name" class="title is-5 white")
-                a(class="navbar-item" href="")="Axel Neergaard"
-        div(class="navbar-menu")
-            div(class="navbar-start")
-                a(class="navbar-item is-active" href="/contact")="Contact"
-        div(class="navbar-end")
-            div(class="navbar-item")
-                p(class="control")
-                    a(class="button is-primary")="TEMP"
+block content
+    .hero-head
+        nav.navbar
+            .navbar-brand
+                //- TODO: on-hover show a card?
+                figure.navbar-item.image.is-48x48
+                    a(href="/")
+                        img.is-rounded(src="/public/cookie.png")
+            .navbar-menu
+                .navbar-end
+                    mixin nav-item(href, name)
+                        a(href=href)&attributes(attributes)= name
+
+                    +nav-item('/', 'Home')(class="navbar-item")
+                    +nav-item('/contact', 'Contact')(class="navbar-item")
+                    +nav-item('/projects', 'Projects')(class="navbar-item")

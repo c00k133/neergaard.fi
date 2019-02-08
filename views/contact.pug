@@ -1,4 +1,12 @@
 extends layouts/main
 
 block content
-    h1="Hello"
+    section.hero.is-fullheight
+        include layouts/navbar
+
+        .hero-body
+            .container
+                p.has-text-centered
+                    a.title.is-4.is-hidden-desktop(href="mailto:" + email) #{email}
+                    a.title.is-hidden-touch(href="mailto:" + email) #{email}
+

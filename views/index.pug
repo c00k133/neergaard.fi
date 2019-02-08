@@ -1,5 +1,25 @@
 extends layouts/main
 
 block content
-    h1(class="title is-4")=title
-    p Welcome to #{title}
+    //- https://bulma.io/documentation/layout/hero/
+    section.hero.is-dark.is-fullheight
+        include layouts/navbar
+
+        .hero-body
+            section.section
+                .container
+                    .columns
+                        .column.is-half.has-text-centered
+                            p.title.is-1 Axel Neergaard
+                        .column
+                            p.title Computer engineering enthusiast from Finland
+
+        //.hero-foot
+            nav.tabs.is-boxed.is-fullwidth
+                .container
+                    mixin list-elem(name)
+                        li
+                            a= name
+                    ul
+                        +list-elem('Overview')
+                        +list-elem('Testing')
