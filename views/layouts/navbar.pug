@@ -5,12 +5,22 @@ block content
                 //- TODO: on-hover show a card?
                 figure.navbar-item.image.is-48x48
                     a(href="/")
-                        img.is-rounded(src="/public/cookie.png")
-            .navbar-menu
-                .navbar-end
-                    mixin nav-item(href, name)
-                        a(href=href)&attributes(attributes)= name
+                        img.is-rounded(src="/public/img/cookie.png")
 
-                    +nav-item('/', 'Home')(class="navbar-item")
-                    +nav-item('/contact', 'Contact')(class="navbar-item")
-                    +nav-item('/projects', 'Projects')(class="navbar-item")
+                //- Navigation burger in case window is too small to show whole navbar
+                span.navbar-burger.burger(data-target='navbar-menu-hero')
+                    span
+                    span
+                    span
+
+            .navbar-menu#navbar-menu-hero
+                .navbar-end
+                    mixin nav-item(href, name, icon)
+                        a.navbar-item(href=href)
+                            span.icon
+                                i.fa(class=icon)
+                            span= name
+
+                    +nav-item('/', 'Home', 'fa-home')
+                    +nav-item('/contact', 'Contact', 'fa-address-card')
+                    +nav-item('/projects', 'Projects', 'fa-code')

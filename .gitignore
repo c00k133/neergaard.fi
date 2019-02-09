@@ -6,7 +6,7 @@
 .idea/**
 
 # Remove Bulma CSS
-public/main.*
+public/main.css
 
 # Logs
 logs

@@ -10,8 +10,8 @@ const PORT = process.env.PORT || 8080
 const HOST = process.env.HOST || '0.0.0.0'
 
 // Helper functions
-const join = (prefix, suffix) => path.join(prefix, suffix)
-const root_join = suffix => join(__dirname, suffix)
+const curried_join = prefix => suffix => path.join(prefix, suffix)
+const root_join = curried_join(__dirname)
 
 // Setup app
 const app = express()
@@ -32,7 +32,7 @@ app.set('view engine', 'pug')
 
 // Route paths
 const routes_path = root_join('routes')
-const routes_join = suffix => join(routes_path, suffix)
+const routes_join = curried_join(routes_path)
 
 const index_routes = require(routes_join('index'))
 const contact_routes = require(routes_join('contact'))
