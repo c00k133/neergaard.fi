@@ -53,10 +53,12 @@ app.use((req, res, next) => {
 
 // Error handling
 app.use((err, req, res, next) => {
-    res.locals.message = err.message
-    res.locals.error = req.app.get('env') === 'development' ? err : {}
+    const err_status = err.status || 500
 
-    res.status(err.status || 500)
+    res.locals.message = err.message
+    res.locals.error = req.app.get('env') === 'development' ? err : {status: err_status}
+
+    res.status(err_status)
     res.render('error')
 })
 

@@ -8,4 +8,5 @@ block content
             .container
                 h1.title.is-3= message
                 h2.subtitle.is-5= error.status
-                pre #{error.stack}
+                if error.stack
+                    pre #{error.stack}

@@ -1,3 +1,7 @@
+# Remove all images
+public/img/
+public/img/**
+
 # Environmental
 .env
 
