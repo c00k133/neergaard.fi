@@ -1,7 +1,7 @@
 <p align="center">
     <a href="https://neergaard.fi">
         <img
-            src="https://raw.githubusercontent.com/c00k133/homepage/master/.img/title.png"
+            src="https://raw.githubusercontent.com/c00k133/neergaard.fi/master/.img/title.png"
             alt="Homepage: neergaard.fi"
             style="max-width:100%"
         />
