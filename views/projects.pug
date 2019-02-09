@@ -8,8 +8,8 @@ block content
             .container
                 .tile.is-ancestor
                     .tile.is-1
-                    .tile.is-parent
-                        .tile.is-child.is-3
+                    .tile.is-parent.is-vertical.is-3
+                        .tile.is-child
                             h3.title.is-3.has-text-centered
                                 | Find more:
 
@@ -24,15 +24,24 @@ block content
                                 +github-button()(class="is-hidden-touch is-large")
                                 //- ...and tinier button if on smaller screen
                                 +github-button()(class="is-hidden-desktop is-medium")
+                    .tile.is-1
                     
-                    each project in projects
-                        .tile.is-parent.is-vertical
-                            .tile.is-child.card
-                                .card-image
-                                    figure.image.is-4by3
-                                        img(src=project.img alt='Placeholder image')
+                    .tile.is-parent.is-vertical
+                        each project in projects
+                            .tile.is-child.is-12.card
+                                //- Image is optional
+                                if project.img
+                                    .card-image
+                                        a(href=project.url)
+                                            figure.image
+                                                img(src=project.img alt='Placeholder image')
                                 .card-content
                                     //- For some reason Bulma decides to put this color in light grey
-                                    //- if not explicitly set...
+                                    //- if not explicitly set to anything else...
                                     p.title.is-3.has-text-dark= project.title
                                     .content= project.info
+
+                                    //- Link created in case there is no image
+                                    unless project.img
+                                        a.is-5(href=project.url) GitHub Link
+                    .tile.is-1

@@ -1,8 +1,19 @@
 [
     {
-        "title": "Test",
-        "img": "public/img/cookie.png",
-        "url": "https://github.com/c00k133/",
-        "info": "Lorem ipsum dolor sit amet,consectetur adipiscing elit.Phasellus nec iaculis mauris."
+        "title": "Q-Learning Worms",
+        "img": "https://github.com/c00k133/q-learning-project/blob/master/doc/illustrations/worms.png?raw=true",
+        "url": "https://github.com/c00k133/q-learning-project",
+        "info": "A C++ project for the Aalto course \"Object-oriented programming with C++\", including worms learning to walk through Q-learning."
+    },
+    {
+        "title": "Dotenvs",
+        "img": "https://github.com/c00k133/dotfiles/blob/master/.img/vim-scrot.png?raw=true",
+        "url": "https://github.com/c00k133/dotfiles",
+        "info": "My dotfiles for environment styling, inludes an installation script."
+    },
+    {
+        "title": "backlight",
+        "url": "https://github.com/c00k133/backlight",
+        "info": "Small C program for altering screen brightness."
     }
 ]
