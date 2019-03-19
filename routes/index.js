@@ -5,7 +5,7 @@ const router = express.Router()
 
 router.get('/', (req, res, next) => {
     res.render('index.pug', {
-        intro_image: "/public/img/cookie.png"
+        intro_image: '/public/img/cookie.png'
     })
 })
 

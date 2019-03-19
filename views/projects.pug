@@ -17,8 +17,6 @@ block content
                                 mixin github-button()
                                     a.button(href=github_link target="_blank" rel="noopener noreferrer")&attributes(attributes)
                                         span.icon
-                                            i.fab.fa-github
-                                        span GitHub
 
                                 //- Add only large button if using larger screen...
                                 +github-button()(class="is-hidden-touch is-large")
@@ -42,6 +40,5 @@ block content
                                     .content= project.info
 
                                     //- Link created in case there is no image
-                                    unless project.img
-                                        a.is-5(href=project.url target="_blank" rel="noopener noreferrer") GitHub Link
+                                    a.is-5(href=project.url) GitHub Link
                     .tile.is-1
