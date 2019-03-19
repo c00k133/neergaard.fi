@@ -6,8 +6,8 @@ const sass_middleware = require('node-sass-middleware')
 const path = require('path')
 
 // Constants
-const PORT = process.env.PORT || 8080
-const HOST = process.env.HOST || '0.0.0.0'
+//const PORT = process.env.PORT || 8080
+//const HOST = process.env.HOST || '0.0.0.0'
 
 // Helper functions
 const curried_join = prefix => suffix => path.join(prefix, suffix)
@@ -63,7 +63,7 @@ app.use((err, req, res, next) => {
 })
 
 
-app.listen(PORT, HOST)
+//app.listen(PORT, HOST)
 module.exports = app
 
-console.log(`Running on http://${HOST}:${PORT}`)
+//console.log(`Running on http://${HOST}:${PORT}`)
