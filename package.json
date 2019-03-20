@@ -4,7 +4,7 @@
   "description": "Personal Homepage",
   "main": "app.js",
   "scripts": {
-    "start": "export $(cat .env | xargs) && node app.js"
+    "start": "export $(cat .env | xargs) && node ./bin/www"
   },
   "author": "Axel Neergaard axel.neergaard@gmail.com",
   "license": "ISC",
