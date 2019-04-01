@@ -2,12 +2,8 @@
 
 // Imports
 const express = require('express')
-const sass_middleware = require('node-sass-middleware')
 const path = require('path')
-
-// Constants
-//const PORT = process.env.PORT || 8080
-//const HOST = process.env.HOST || '0.0.0.0'
+const favicon = require('serve-favicon')
 
 // Helper functions
 const curried_join = prefix => suffix => path.join(prefix, suffix)
@@ -16,15 +12,9 @@ const root_join = curried_join(__dirname)
 // Setup app
 const app = express()
 
-app.use(
-    sass_middleware({
-        src: __dirname,
-        dest: __dirname,
-        debug: process.env.NODE_ENV === 'development'
-    })
-)
-
-app.use('/public', express.static(root_join('public')))
+const public_folder = root_join('public')
+app.use('/public', express.static(public_folder))
+app.use(favicon(path.join(public_folder, 'favicon.ico')))
 
 app.set('views', root_join('views'))
 app.set('view engine', 'pug')
@@ -63,7 +53,4 @@ app.use((err, req, res, next) => {
 })
 
 
-//app.listen(PORT, HOST)
 module.exports = app
-
-//console.log(`Running on http://${HOST}:${PORT}`)

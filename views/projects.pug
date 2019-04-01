@@ -42,5 +42,8 @@ block content
                                     .content= project.info
 
                                     //- Link created in case there is no image
-                                    a.is-5(href=project.url) GitHub Link
+                                    a.is-5(href=project.url target="_blank" rel="noopener noreferrer")
+                                        span.icon
+                                            i.fab.fa-github
+                                        span Source
                     .tile.is-1
