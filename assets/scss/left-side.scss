@@ -1,0 +1,52 @@
+@import 'common';
+
+#left-side {
+    $left-width: $card-width / 12 * 4;
+    
+    width: $left-width;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+
+    #image-container {
+        $image-transition: opacity 0.5s ease-in-out;
+
+        position: relative;
+
+        %face-image {
+            max-width: $left-width * 0.8;
+            margin: 15px;
+            border-radius: 50%;
+
+            -webkit-transition: $image-transition;
+            -moz-transition: $image-transition;
+            -o-transition: $image-transition;
+            transition: $image-transition;
+        }
+
+        img#drawing {
+            @extend %face-image;
+            opacity: 1.0;
+        }
+
+        img#real {
+            @extend %face-image;
+            opacity: 0.0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 99;
+        }
+    }
+
+    #image-container:hover img#drawing,
+    #image-container:active img#drawing {
+        opacity: 0.0;
+    }
+
+    #image-container:hover img#real,
+    #image-container:active img#real {
+        opacity: 1.0;
+    }
+}

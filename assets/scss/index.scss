@@ -1,39 +1,41 @@
-$christmas-red: #BB2528;
-$christmas-green: #165B33;
-$christmas-white: #FFFFFF;
+@import 'common';
 
 * {
-    font-family: 'Montserrat', sans-serif;
+    font-family: $font-stack;
+    color: $text-color;
 }
 
 body {
-    background-color: $christmas-green;
-    overflow: hidden;
+    background-color: $background-color;
 }
 
-html, body {
-    height: 100%;
-    margin: 0px;
-}
-
-#page-content {
+#container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    min-height: 100vh;
 }
 
-h1, h2 {
-    margin: 0px;
-    color: $christmas-red;
-    -webkit-text-stroke: 1px $christmas-white;
+#card {
+    width: $card-width;
+    height: $card-height;
+
+    border-radius: 16px;
+
+    background-color: $card-primary-color;
+
+    // Stolen from Bulma
+    $shadow-color: #0a0a0a;
+    box-shadow: 0 .5em 1em -.125em rgba($shadow-color, .1), 0 0 0 1px rgba($shadow-color, .02)
 }
 
-.greeting {
-    font-size: 400%;
-}
+$cc-horizontal-padding: 20px;
+#card-content {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    min-height: $card-height - $cc-horizontal-padding * 2;
 
-.sender {
-    font-size: 200%;
+    padding: $cc-horizontal-padding 40px $cc-horizontal-padding;
 }

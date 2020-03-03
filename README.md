@@ -1,1 +1,1 @@
-My webpage, please have a look here: [neergaard.dev](https://neergaard.dev/)
+My webpage, have a look at: [neergaard.dev](https://neergaard.dev/)

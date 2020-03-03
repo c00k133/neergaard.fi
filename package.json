@@ -1,5 +1,5 @@
 {
-  "name": "theaa.team",
+  "name": "neergaard.dev",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -7,7 +7,8 @@
     "scss-watch": "node-sass --watch assets/scss -o build/assets/css",
     "pug": "pug templates --out build",
     "pug-watch": "pug --watch templates --out build",
-    "build": "npm run scss && npm run pug"
+    "copy-assets": "cp -r assets/images build/assets/",
+    "build": "npm run scss && npm run pug && npm run copy-assets"
   },
   "author": "",
   "license": "ISC",
