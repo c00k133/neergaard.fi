@@ -1,0 +1,39 @@
+$christmas-red: #BB2528;
+$christmas-green: #165B33;
+$christmas-white: #FFFFFF;
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: $christmas-green;
+    overflow: hidden;
+}
+
+html, body {
+    height: 100%;
+    margin: 0px;
+}
+
+#page-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+h1, h2 {
+    margin: 0px;
+    color: $christmas-red;
+    -webkit-text-stroke: 1px $christmas-white;
+}
+
+.greeting {
+    font-size: 400%;
+}
+
+.sender {
+    font-size: 200%;
+}

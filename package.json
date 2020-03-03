@@ -1,18 +1,18 @@
 {
-  "name": "homepage",
+  "name": "theaa.team",
   "version": "1.0.0",
-  "description": "Personal Homepage",
-  "main": "app.js",
+  "description": "",
   "scripts": {
-    "start": "export $(cat .env | xargs) && node ./bin/www"
+    "scss": "node-sass assets/scss -o build/assets/css",
+    "scss-watch": "node-sass --watch assets/scss -o build/assets/css",
+    "pug": "pug templates --out build",
+    "pug-watch": "pug --watch templates --out build",
+    "build": "npm run scss && npm run pug"
   },
-  "author": "Axel Neergaard axel.neergaard@gmail.com",
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "bulma": "^0.7.2",
-    "bulma-start": "0.0.2",
-    "express": "^4.16.4",
-    "pug": "^2.0.3",
-    "serve-favicon": "^2.5.0"
+    "node-sass": "^4.13.0",
+    "pug-cli": "^1.0.0-alpha6"
   }
 }
