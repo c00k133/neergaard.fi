@@ -1,0 +1,16 @@
+name: homepage - CI
+
+on: pull_request
+
+jobs:
+    test-pug:
+        runs-on: ubuntu-18.04
+        steps:
+            - name: Run Pug compiler
+              run: npm run pug
+
+    test-sass:
+        runs-on: ubuntu-18.04
+        steps:
+            - name: Run SASS compiler
+              run: npm run scss
