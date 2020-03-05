@@ -108,8 +108,14 @@
     }
 
     #navigation a {
+        @include set-transitions(color 0.5s ease);
+
         font-size: 200%;
         color: $background-color;
         margin-right: 15px;
+
+        &:hover {
+            color: $card-secondary-color;
+        }
     }
 }
