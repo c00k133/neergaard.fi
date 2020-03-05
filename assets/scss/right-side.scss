@@ -13,18 +13,14 @@
         padding-bottom: 10px;
 
         #name-box {
-            $name-transition: opacity 0.5s ease-in-out;
             position: relative;
 
             %name-style {
+                @include set-transitions(opacity 0.5s ease-in-out);
+
                 font-weight: 800;
                 font-size: 160%;
                 color: $card-secondary-color;
-
-                -webkit-transition: $name-transition;
-                -moz-transition: $name-transition;
-                -o-transition: $name-transition;
-                transition: $name-transition;
             }
 
             #name {
