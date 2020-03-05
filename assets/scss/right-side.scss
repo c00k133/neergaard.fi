@@ -91,6 +91,17 @@
 
     #information {
         padding-bottom: 20px;
+
+        a {
+            @include set-transitions(color 0.5s ease);
+
+            display: inline;
+            text-decoration: none;
+
+            &:hover {
+                color: $card-secondary-color;
+            }
+        }
     }
 
     #navigation a {
