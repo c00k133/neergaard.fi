@@ -25,9 +25,7 @@ body {
 
     background-color: $card-primary-color;
 
-    // Stolen from Bulma
-    $shadow-color: #0a0a0a;
-    box-shadow: 0 .5em 1em -.125em rgba($shadow-color, .1), 0 0 0 1px rgba($shadow-color, .02)
+    box-shadow: .5rem 1rem 1rem rgba(#0a0a0a, 0.6);
 }
 
 $cc-horizontal-padding: 20px;
