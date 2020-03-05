@@ -41,6 +41,7 @@
         #location {
             $location-transition: opacity 0.5s ease-in-out;
             position: relative;
+            color: $text-color;
 
             %location-style {
                 font-weight: 300;
@@ -91,12 +92,14 @@
 
     #information {
         padding-bottom: 20px;
+        color: $text-color;
 
         a {
             @include set-transitions(color 0.5s ease);
 
             display: inline;
             text-decoration: none;
+            color: $text-color;
 
             &:hover {
                 color: $card-secondary-color;
