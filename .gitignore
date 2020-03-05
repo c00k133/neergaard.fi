@@ -1,5 +1,6 @@
 build
 assets/images
+assets/cv.pdf
 !assets/images/.keep
 
 # Logs
