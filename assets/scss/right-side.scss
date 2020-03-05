@@ -10,6 +10,8 @@
 
 
     #title {
+        padding-bottom: 10px;
+
         #name-box {
             $name-transition: opacity 0.5s ease-in-out;
             position: relative;
@@ -69,27 +71,25 @@
             }
         }
 
+        &:hover, &:active {
+            #name-box #name,
+            #location #named {
+                opacity: 0.0;
+            }
+        }
+
+        &:hover, &:active {
+            #name-box #nickname,
+            #location #coordinates {
+                opacity: 1.0;
+            }
+        }
+
         hr {
             border: 0px;
             border-top: 2px solid;
             color: $text-color;
             opacity: 0.4;
-        }
-
-        padding-bottom: 10px;
-    }
-
-    #title:hover, #title:active {
-        #name-box #name,
-        #location #named {
-            opacity: 0.0;
-        }
-    }
-
-    #title:hover, #title:active {
-        #name-box #nickname,
-        #location #coordinates {
-            opacity: 1.0;
         }
     }
 
