@@ -17,6 +17,18 @@ body {
     min-height: 100vh;
 }
 
+@keyframes card-animation {
+    0% {
+        opacity: 0;
+        transform: translateX(30px) translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px) translateY(0px);
+    }
+}
+
 #card {
     width: $card-width;
     height: $card-height;
@@ -26,6 +38,20 @@ body {
     background-color: $card-primary-color;
 
     box-shadow: .5rem 1rem 1rem rgba(#0a0a0a, 0.6);
+
+    animation: card-animation 1.3s;
+}
+
+@keyframes card-content-animation {
+    0% {
+        opacity: 0;
+        transform: translateX(0px) translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px) translateY(0px);
+    }
 }
 
 $cc-horizontal-padding: 20px;
@@ -36,4 +62,8 @@ $cc-horizontal-padding: 20px;
     min-height: $card-height - $cc-horizontal-padding * 2;
 
     padding: $cc-horizontal-padding 40px $cc-horizontal-padding;
+
+    animation: card-content-animation 1.0s;
+    animation-delay: 0.15s;
+    animation-fill-mode: backwards;
 }
