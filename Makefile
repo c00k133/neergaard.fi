@@ -3,6 +3,12 @@ SHELL := /bin/bash
 all:
 	npm run build
 
+node_modules:
+	npm install
+
+build/index.html: node_modules
+	npm run build
+
 css: src/assets/scss/*.scss
 	npm run scss
 
@@ -26,4 +32,4 @@ docker-run: docker-build
 		--volume ${PWD}:/src \
 		--volume ${PWD}/build:/src/build \
 		homepage-builder \
-		npm run build --prefix /src
+		make -C /src build/index.html
