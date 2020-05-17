@@ -3,17 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "scss": "node-sass assets/scss -o build/assets/css",
-    "scss-watch": "node-sass --watch assets/scss -o build/assets/css",
-    "pug": "pug templates --out build",
-    "pug-watch": "pug --watch templates --out build",
-    "copy-assets": "cp -r assets/images assets/cv.pdf build/assets/",
+    "scss": "node-sass src/assets/scss -o build/assets/css",
+    "scss-watch": "node-sass --watch src/assets/scss -o build/assets/css",
+    "pug": "pug src/templates --out build",
+    "pug-watch": "pug --watch src/templates --out build",
+    "copy-assets": "cp -r src/assets/images src/assets/cv.pdf build/assets/",
     "build": "npm run scss && npm run pug && npm run copy-assets"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.14.1",
     "pug-cli": "^1.0.0-alpha6"
   }
 }
