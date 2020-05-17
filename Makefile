@@ -32,4 +32,4 @@ docker-run: docker-build
 		--volume ${PWD}:/src \
 		--volume ${PWD}/build:/src/build \
 		homepage-builder \
-		make -C /src build/index.html
+		make --directory=/src build/index.html
