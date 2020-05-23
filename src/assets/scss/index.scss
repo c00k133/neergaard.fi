@@ -67,3 +67,11 @@ $cc-horizontal-padding: 20px;
     animation-delay: 0.15s;
     animation-fill-mode: backwards;
 }
+
+#copyright {
+    // The shadown size of the card plus some
+    margin-top: 2rem;
+    color: $text-color;
+
+    animation: card-animation 1.3s;
+}
