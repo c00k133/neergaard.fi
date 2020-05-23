@@ -4,9 +4,9 @@
   "description": "",
   "scripts": {
     "scss": "node-sass src/assets/scss -o build/assets/css",
-    "scss-watch": "node-sass --watch src/assets/scss -o build/assets/css",
+    "scss:watch": "node-sass --watch src/assets/scss -o build/assets/css",
     "pug": "pug src/templates --out build",
-    "pug-watch": "pug --watch src/templates --out build",
+    "pug:watch": "pug --watch src/templates --out build",
     "copy-assets": "cp -r src/assets/images src/assets/cv.pdf build/assets/",
     "build": "npm run scss && npm run pug && npm run copy-assets"
   },
