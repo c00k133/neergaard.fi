@@ -11,12 +11,12 @@
 
     #image-container {
         $image-transition: opacity 0.5s ease-in-out;
+        $image-margin: 15px;
 
         position: relative;
 
         %face-image {
             max-width: $left-width * 0.8;
-            margin: 15px;
             border-radius: 50%;
 
             -webkit-transition: $image-transition;
@@ -30,8 +30,50 @@
             opacity: 1.0;
         }
 
+        #drawing-container {
+            position: relative;
+            overflow: hidden;
+            margin: $image-margin;
+            border-radius: 50%;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: -50%;
+                right: -50%;
+                bottom: -50%;
+                left: -50%;
+
+                $edge-color: rgba(255, 255, 255, 0);
+                background: linear-gradient(to bottom, $edge-color 40%, rgba(255, 255, 255, 0.5) 50%, $edge-color 60%);
+
+                animation-name: sheen;
+                animation-delay: 1.5s;
+                animation-duration: 12s;
+                animation-iteration-count: infinite;
+
+                $z-rotation: 120deg;
+                $start-pos: translate(0em, 8em);
+                transform: rotateZ($z-rotation) $start-pos;
+                @keyframes sheen {
+                    0% {
+                        transform: rotateZ($z-rotation) $start-pos;
+                    }
+
+                    10% {
+                        transform: rotateZ($z-rotation) translate(1em, -9em);
+                    }
+
+                    100% {
+                        transform: rotateZ($z-rotation) translate(1em, -9em);
+                    }
+                }
+            }
+        }
+
         img#real {
             @extend %face-image;
+            margin: $image-margin;
             opacity: 0.0;
             position: absolute;
             top: 0;
