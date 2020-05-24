@@ -76,3 +76,15 @@ body {
 
     animation: card-animation 1.3s;
 }
+
+#card-rim {
+    $rim-margin: 15px;
+    width: $card-width - 2 * $rim-margin;
+    height: $card-height - 2 * $rim-margin;
+    margin: $rim-margin;
+
+    position: absolute;
+    border: 1px solid $background-color;
+    border-radius: 14px;
+    pointer-events: none;
+}
