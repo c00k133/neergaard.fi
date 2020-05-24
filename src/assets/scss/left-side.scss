@@ -10,19 +10,15 @@
     align-items: center;
 
     #image-container {
-        $image-transition: opacity 0.5s ease-in-out;
         $image-margin: 15px;
 
         position: relative;
 
         %face-image {
+            @include set-transitions(opacity 0.5s ease-in-out);
+
             max-width: $left-width * 0.8;
             border-radius: 50%;
-
-            -webkit-transition: $image-transition;
-            -moz-transition: $image-transition;
-            -o-transition: $image-transition;
-            transition: $image-transition;
         }
 
         img#drawing {

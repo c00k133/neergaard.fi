@@ -39,18 +39,14 @@
         }
 
         #location {
-            $location-transition: opacity 0.5s ease-in-out;
             position: relative;
             color: $text-color;
 
             %location-style {
+                @include set-transitions(opacity 0.5s ease-in-out);
+
                 font-weight: 300;
                 font-style: italic;
-
-                -webkit-transition: $location-transition;
-                -moz-transition: $location-transition;
-                -o-transition: $location-transition;
-                transition: $location-transition;
             }
 
             #named {
