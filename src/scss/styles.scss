@@ -1,0 +1,56 @@
+@import 'common';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: $font-stack;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $background-color;
+    color: $content-color;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: $card-width;
+    height: $card-height;
+
+    border: 6px solid $content-color;
+
+    h1 {
+        margin: 0 0 16px 0;
+    }
+}
+
+.dim {
+    display: inline;
+    position: absolute;
+    color: $dim-color;
+}

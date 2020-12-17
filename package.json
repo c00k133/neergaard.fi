@@ -4,12 +4,11 @@
   "description": "",
   "scripts": {
     "start": "concurrently \"yarn scss:watch\" \"yarn pug:watch\" \"yarn scss\"",
-    "scss": "node-sass src/assets/scss -o build/assets/css",
-    "scss:watch": "node-sass --watch src/assets/scss -o build/assets/css",
+    "scss": "node-sass src/scss -o build/assets/css",
+    "scss:watch": "node-sass --watch src/scss -o build/assets/css",
     "pug": "pug src/templates --out build",
     "pug:watch": "pug --watch src/templates --out build",
-    "copy-assets": "cp --recursive src/assets/images src/assets/cv.pdf build/assets/",
-    "build": "yarn scss && yarn pug && yarn copy-assets",
+    "build": "yarn scss && yarn pug",
     "clean": "rm --recursive --force build"
   },
   "author": "",

@@ -1,16 +1,14 @@
 extends base.pug
 
-block links
-  link(
-    rel='stylesheet'
-    href='https://use.fontawesome.com/releases/v5.5.0/css/all.css'
-    integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU'
-    crossorigin='anonymous')
-
-  - var files = ['index.css', 'left-side.css', 'right-side.css'] 
-  each file in files
-    link(rel='stylesheet' href='assets/css/' + file)
-
 block content
-  include left-side.pug
-  include right-side.pug
+  #container
+    //- FIXME: why won't the CSS selector pick this?
+    h1(style='margin: 0 0 16px 0;')
+      a(href='mailto:axel@neergaard.dev')
+        | axel
+        .dim @
+        |  neergaard
+        .dim .dev
+    h2
+      a(href='https://github.com/c00k133')
+        | github: @c00k133
