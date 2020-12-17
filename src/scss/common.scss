@@ -4,13 +4,8 @@ $content-color: #fbd3c0;
 $background-color: #121212;
 $dim-color: #222222;
 
+$border-width: 6px;
+
 $card-width: 700px;
 $finnish-business-card-ratio: 1.8;
 $card-height: $card-width / $finnish-business-card-ratio;
-
-@mixin set-transitions($variables) {
-    -webkit-transition: $variables;
-    -moz-transition: $variables;
-    -o-transition: $variables;
-    transition: $variables;
-}
