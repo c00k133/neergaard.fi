@@ -4,20 +4,16 @@ html(lang='en')
     meta(charset='UTF-8')
     meta(name='viewport' content='width=device-width, initial-scale=1')
 
-    title Axel Neergaard
+    title axel neergaard
 
-    link(
-      rel='stylesheet'
-      href='https://fonts.googleapis.com/css?family=Montserrat:300i,400,800&display=swap')
+    link(rel='stylesheet' href='assets/css/styles.css')
+
+    link(rel="preconnect" href="https://fonts.gstatic.com")
+    link(href="https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap" rel="stylesheet")
+
+    // TODO: Meta tag
 
     block links
 
   body
-    #container
-      #card
-        #card-rim
-        #card-content
-          block content
-
-      #copyright
-        | &#169; 2020 - Axel Neergaard
+    block content
