@@ -4,8 +4,8 @@
   "description": "",
   "scripts": {
     "start": "concurrently \"yarn scss:watch\" \"yarn pug:watch\" \"yarn scss\"",
-    "scss": "node-sass src/scss -o build/assets/css",
-    "scss:watch": "node-sass --watch src/scss -o build/assets/css",
+    "scss": "node-sass src/scss --output build/assets/css",
+    "scss:watch": "node-sass --watch src/scss --output build/assets/css",
     "pug": "pug src/templates --out build",
     "pug:watch": "pug --watch src/templates --out build",
     "build": "yarn scss && yarn pug",
@@ -16,6 +16,7 @@
   "dependencies": {},
   "devDependencies": {
     "concurrently": "^5.3.0",
+    "include-media": "^1.4.9",
     "node-sass": "^5.0.0",
     "pug-cli": "^1.0.0-alpha6"
   }

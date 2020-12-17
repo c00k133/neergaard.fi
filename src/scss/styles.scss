@@ -1,4 +1,6 @@
 @import 'common';
+// FIXME: should not have to define full path for this
+@import 'node_modules/include-media/dist/_include-media.scss';
 
 * {
     margin: 0;
@@ -22,6 +24,14 @@ body {
 
     background-color: $background-color;
     color: $content-color;
+
+    @include media('<=tablet') {
+        padding: $border-width 0 $border-width;
+    }
+
+    @include media('height<=tablet') {
+        padding: $border-width 0 $border-width;
+    }
 }
 
 a {
@@ -30,6 +40,12 @@ a {
 
     &:hover {
         text-decoration: underline;
+
+        > .dim {
+            color: darken($content-color, 10%);
+            text-decoration: underline;
+            text-decoration-color: $content-color;
+        }
     }
 }
 
@@ -39,10 +55,27 @@ a {
     justify-content: center;
     align-items: center;
 
-    width: $card-width;
-    height: $card-height;
+    border: $border-width solid $content-color;
 
-    border: 6px solid $content-color;
+    @include media('height>tablet') {
+        width: $card-width;
+        height: $card-height;
+    }
+
+    @include media('>tablet') {
+        width: $card-width;
+        height: $card-height;
+    }
+
+    @include media('height<=tablet') {
+        width: 100%;
+        height: 100%;
+    }
+
+    @include media('<=tablet') {
+        width: 100%;
+        height: 100%;
+    }
 
     h1 {
         margin: 0 0 16px 0;
@@ -53,4 +86,8 @@ a {
     display: inline;
     position: absolute;
     color: $dim-color;
+
+    @include media('<=500px') {
+        visibility: hidden;
+    }
 }
