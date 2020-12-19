@@ -1,4 +1,8 @@
 @import 'common';
+
+// Has to be defined before the import of include-media
+$media-expressions: (is-narrower-than-text:
+                    ('(max-width: 767px)', '(max-height: 767px)')) !default;
 // FIXME: should not have to define full path for this
 @import 'node_modules/include-media/dist/_include-media.scss';
 
@@ -24,14 +28,6 @@ body {
 
     background-color: $background-color;
     color: $content-color;
-
-    @include media('<=tablet') {
-        padding: $border-width 0 $border-width;
-    }
-
-    @include media('height<=tablet') {
-        padding: $border-width 0 $border-width;
-    }
 }
 
 a {
@@ -42,9 +38,8 @@ a {
         text-decoration: underline;
 
         > .dim {
-            color: darken($content-color, 10%);
+            color: $content-color;
             text-decoration: underline;
-            text-decoration-color: $content-color;
         }
     }
 }
@@ -55,24 +50,12 @@ a {
     justify-content: center;
     align-items: center;
 
+    box-sizing: border-box;
     border: $border-width solid $content-color;
 
-    @include media('height>tablet') {
-        width: $card-width;
-        height: $card-height;
-    }
-
-    @include media('>tablet') {
-        width: $card-width;
-        height: $card-height;
-    }
-
-    @include media('height<=tablet') {
-        width: 100%;
-        height: 100%;
-    }
-
-    @include media('<=tablet') {
+    width: $card-width;
+    height: $card-height;
+    @include media('is-narrower-than-text') {
         width: 100%;
         height: 100%;
     }
