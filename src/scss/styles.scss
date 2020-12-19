@@ -42,6 +42,14 @@ a {
             text-decoration: underline;
         }
     }
+
+    &.with-prompt:before {
+        content: '>:';
+        display: none;
+        @include media('is-narrower-than-text') {
+            display: inline;
+        }
+    }
 }
 
 #container {
