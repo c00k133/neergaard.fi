@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "concurrently \"yarn scss:watch\" \"yarn pug:watch\" \"yarn scss\"",
+    "start": "concurrently \"yarn scss:watch\" \"yarn pug:watch\" \"yarn scss\" \"yarn copy-assets\"",
     "scss": "node-sass src/scss --output build/assets/css",
     "scss:watch": "node-sass --watch src/scss --output build/assets/css",
     "pug": "pug src/templates --out build",
     "pug:watch": "pug --watch src/templates --out build",
     "build": "yarn scss && yarn pug",
-    "clean": "rm --recursive --force build"
+    "clean": "rm --recursive --force build",
+    "copy-assets": "mkdir --parents build/assets/ && cp --recursive assets/ build/assets/"
   },
   "author": "",
   "license": "ISC",
