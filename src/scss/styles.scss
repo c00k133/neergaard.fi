@@ -28,6 +28,10 @@ body {
 
     background-color: $background-color;
     color: $content-color;
+    @media (prefers-color-scheme: light) {
+        background-color: $content-color;
+        color: $background-color;
+    }
 }
 
 a {
@@ -38,7 +42,7 @@ a {
         text-decoration: underline;
 
         > .dim {
-            color: $content-color;
+            color: inherit;
             text-decoration: underline;
         }
     }
@@ -59,7 +63,7 @@ a {
     align-items: center;
 
     box-sizing: border-box;
-    border: $border-width solid $content-color;
+    border: $border-width solid;
 
     width: $card-width;
     height: $card-height;
@@ -76,7 +80,11 @@ a {
 .dim {
     display: inline;
     position: absolute;
-    color: $dim-color;
+
+    color: lighten($background-color, 10%);
+    @media (prefers-color-scheme: light) {
+        color: darken($content-color, 10%);
+    }
 
     @include media('<=500px') {
         visibility: hidden;
