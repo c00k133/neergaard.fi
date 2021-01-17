@@ -3,7 +3,7 @@ root = true
 [*]
 indent_style = space
 
-[*.{html,pug}]
+[*.{html,pug,yml}]
 indent_size = 2
 
 [*.scss]
