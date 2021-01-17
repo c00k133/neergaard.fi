@@ -1,0 +1,31 @@
+name: Master build and deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '11.x'
+      - run: npm install
+      - name: Build homepage
+        run: npm build
+      - name: Deploy build
+        env:
+          HOST: ${{ secrets.HOST }}
+          USER: ${{ secrets.USER }}
+          PATH: ${{ secrets.PATH }}
+          SSH_KEY: ${{ secrets.SSH_KEY }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+        run: |
+          mkdir ~/.ssh
+          echo "${SSH_KEY}" > ~/.ssh/id_github
+          chmod 600 ~/.ssh/id_github
+          rsync --archive --verbose --compress --rescursive --rsh="ssh -p ${SSH_PORT} -i ~/.ssh/id_github build "${USER}@${HOST}:${PATH}"
+          rm ~/.ssh/id_github
