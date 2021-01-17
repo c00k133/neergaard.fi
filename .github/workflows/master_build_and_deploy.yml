@@ -18,7 +18,7 @@ jobs:
       - name: Build homepage
         run: npm run build
       - name: Install needed environment packages
-        run: sudo apt-get update && sudo apt-get install chmod rsync
+        run: sudo apt-get update && sudo apt-get install rsync
       - name: Deploy build
         env:
           HOST: ${{ secrets.HOST }}
