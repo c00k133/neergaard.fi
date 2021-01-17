@@ -17,6 +17,8 @@ jobs:
       - run: npm install
       - name: Build homepage
         run: npm run build
+      - name: Install needed environment packages
+        run: apt update && apt install chmod rsync
       - name: Deploy build
         env:
           HOST: ${{ secrets.HOST }}
