@@ -27,5 +27,5 @@ jobs:
         run: |
           echo "${SSH_KEY}" > id_github.key
           chmod 600 id_github.key
-          rsync --archive --verbose --compress --rescursive --rsh="ssh -p ${SSH_PORT} -i id_github.key build "${USER}@${HOST}:${PATH}"
+          rsync --archive --verbose --compress --rescursive --rsh="ssh -p ${SSH_PORT} -i id_github.key" build "${USER}@${HOST}:${PATH}"
           rm id_github.key
