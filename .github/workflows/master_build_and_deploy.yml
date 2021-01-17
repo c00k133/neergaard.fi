@@ -9,13 +9,17 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '11.x'
-      - run: npm install
-      - name: Build homepage
-        run: npm build
+      - uses: actions/checkout@v2
+      # This action breaks $PATH, so install node manually
+      #- uses: actions/setup-node@v2.1.4
+      #  with:
+      #    node-version: '14'
+      - name: Setup node
+        run: sudo apt install --yes nodejs npm
+      - name: Install project packages
+        run: npm install
+      - name: Build project
+        run: npm run build
       - name: Deploy build
         env:
           HOST: ${{ secrets.HOST }}
@@ -24,8 +28,10 @@ jobs:
           SSH_KEY: ${{ secrets.SSH_KEY }}
           SSH_PORT: ${{ secrets.SSH_PORT }}
         run: |
-          mkdir ~/.ssh
-          echo "${SSH_KEY}" > ~/.ssh/id_github
-          chmod 600 ~/.ssh/id_github
-          rsync --archive --verbose --compress --rescursive --rsh="ssh -p ${SSH_PORT} -i ~/.ssh/id_github build "${USER}@${HOST}:${PATH}"
-          rm ~/.ssh/id_github
+          echo "${SSH_KEY}" > id_github
+          /bin/chmod 600 id_github
+          /usr/bin/rsync \
+            --archive --verbose --compress --recursive --delete-after \
+            --rsh="/usr/bin/ssh -p ${SSH_PORT} -i id_github -o StrictHostKeyChecking=no" \
+            build/* "${USER}@${HOST}:${PATH}"
+          /bin/rm id_github
