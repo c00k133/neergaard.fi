@@ -1,0 +1,92 @@
+@import 'common';
+
+// Has to be defined before the import of include-media
+$media-expressions: (is-narrower-than-text:
+                    ('(max-width: 767px)', '(max-height: 767px)')) !default;
+// FIXME: should not have to define full path for this
+@import 'node_modules/include-media/dist/_include-media.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: $font-stack;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $background-color;
+    color: $content-color;
+    @media (prefers-color-scheme: light) {
+        background-color: $content-color;
+        color: $background-color;
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+
+    &:hover {
+        text-decoration: underline;
+
+        > .dim {
+            color: inherit;
+            text-decoration: underline;
+        }
+    }
+
+    &.with-prompt:before {
+        content: '>:';
+        display: none;
+        @include media('is-narrower-than-text') {
+            display: inline;
+        }
+    }
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+    border: $border-width solid;
+
+    width: $card-width;
+    height: $card-height;
+    @include media('is-narrower-than-text') {
+        width: 100%;
+        height: 100%;
+    }
+
+    h1 {
+        margin: 0 0 16px 0;
+    }
+}
+
+.dim {
+    display: inline;
+    position: absolute;
+
+    color: lighten($background-color, 10%);
+    @media (prefers-color-scheme: light) {
+        color: darken($content-color, 10%);
+    }
+
+    @include media('<=500px') {
+        visibility: hidden;
+    }
+}

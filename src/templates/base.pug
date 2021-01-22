@@ -3,21 +3,18 @@ html(lang='en')
   head
     meta(charset='UTF-8')
     meta(name='viewport' content='width=device-width, initial-scale=1')
+    meta(name='author' content='axel neergaard')
+    meta(name='keywords' content='homepage')
+    meta(name='robots' content='index, nofollow')
+    meta(name='description' content='axel neergaard - developer')
+    meta(property='og:description' content='axel neergaard - developer')
+    meta(property='og:title' content='axel neergaard')
+    title axel neergaard
 
-    title Axel Neergaard
-
-    link(
-      rel='stylesheet'
-      href='https://fonts.googleapis.com/css?family=Montserrat:300i,400,800&display=swap')
+    link(rel='stylesheet' href='assets/css/styles.css')
+    link(rel='shortcut icon' href='/assets/favicon.ico' type='image/x-icon')
 
     block links
 
   body
-    #container
-      #card
-        #card-rim
-        #card-content
-          block content
-
-      #copyright
-        | &#169; 2020 - Axel Neergaard
+    block content
