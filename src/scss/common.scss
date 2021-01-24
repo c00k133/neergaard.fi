@@ -11,5 +11,5 @@ $font-nova-mono: 'Nova Mono';
 $font-stack: $font-nova-mono, monospace;
 @font-face {
     font-family: $font-nova-mono;
-    src: url('assets/fonts/NovaMono-Regular.ttf') format('truetype');
+    src: url('../fonts/NovaMono-Regular.ttf') format('truetype');
 }

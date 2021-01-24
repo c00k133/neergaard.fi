@@ -8,9 +8,9 @@
     "scss:watch": "node-sass --watch src/scss --output build/assets/css",
     "pug": "pug src/templates --out build",
     "pug:watch": "pug --watch src/templates --out build",
-    "build": "yarn scss && yarn pug",
+    "build": "yarn scss && yarn pug && yarn copy-assets",
     "clean": "rm --recursive --force build",
-    "copy-assets": "mkdir --parents build/assets/ && cp --recursive assets/ build/assets/"
+    "copy-assets": "mkdir --parents build/assets/ && cp --recursive assets/* build/assets/"
   },
   "author": "",
   "license": "ISC",
