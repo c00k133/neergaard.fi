@@ -12,3 +12,20 @@ block content
     h2
       a(href='https://github.com/c00k133')
         | github: @c00k133
+
+    #pgp-keys-small
+      h5
+        a(href='/assets/neergaard-pgp-key.asc')
+          | PGP Public Key: neergaard-pgp-key.asc
+      h5
+        a(href='/assets/neergaard-pgp-key-checksum.txt')
+          | SHA256: neergaard-php-key-checksum.txt
+
+  #pgp-keys-large
+    h6
+      a(href='/assets/neergaard-pgp-key.asc')
+        | PGP Public Key: neergaard-pgp-key.asc
+    h6
+      | SHA256:
+      a(href='/assets/neergaard-pgp-key-checksum.txt')
+        include ../../assets/neergaard-pgp-key-checksum.txt
