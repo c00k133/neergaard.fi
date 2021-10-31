@@ -78,6 +78,10 @@ a {
     }
 }
 
+.secondary {
+    color: transparentize($content-color, 0.3);
+}
+
 .dim {
     display: inline;
     position: absolute;
